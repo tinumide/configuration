@@ -111,9 +111,8 @@
     - install:code
 
 - name: Run automated installer to actually setup the tableau server
-  shell: "{{ tableau_installer_dir }}/automated-installer  -s {{ tableau_installer_dir }}/secrets -f {{ tableau_installer_dir }}/config.json -r {{ tableau_installer_dir }}/registration.json --accepteula {{ tableau_installer_dir }}/{{ tableau_server_deb_pkg_name }}"
+  shell: "sudo {{ tableau_installer_dir }}/automated-installer  -s {{ tableau_installer_dir }}/secrets -f {{ tableau_installer_dir }}/config.json -r {{ tableau_installer_dir }}/registration.json --accepteula {{ tableau_installer_dir }}/{{ tableau_server_deb_pkg_name }}"
   become_user: "{{ tableau_user }}"
-  sudo: true
   tags:
     - install
     - install:code
