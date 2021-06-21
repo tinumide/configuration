@@ -8,6 +8,7 @@
     home: "{{ tableau_app_dir }}"
     createhome: "{{ tableau_user_createhome }}"
     shell: "{{ tableau_user_shell }}"
+    group: "{{ tableau_user_group }}"
   tags:
     - install
     - install:base
