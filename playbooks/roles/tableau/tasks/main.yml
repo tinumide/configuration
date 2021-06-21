@@ -11,6 +11,13 @@
     - install
     - install:base
 
+- name: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
+  debug:
+    msg: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
+  tags:
+    - install
+    - install:base
+
 - name: create application user
   user:
     name: "{{ tableau_user }}"
@@ -19,6 +26,7 @@
     shell: "{{ tableau_user_shell }}"
     group: "{{ tableau_user_group }}"
     groups: "sudo"
+    password: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
   tags:
     - install
     - install:base
