@@ -2,6 +2,7 @@
 #  - group_vars/all
 #  - common/tasks/main.yml
 ---
+
 - name: create main group for tableau's default user
   group:
     name: "{{ tableau_user_group }}"
