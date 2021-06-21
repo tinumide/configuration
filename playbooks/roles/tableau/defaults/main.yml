@@ -13,7 +13,7 @@ tableau_data_dir: "{{ COMMON_DATA_DIR }}/tableau"
 tableau_app_dir: "{{ COMMON_APP_DIR }}/tableau"
 tableau_log_dir: "{{ COMMON_LOG_DIR }}/tableau"
 tableau_code_dir: "{{ tableau_app_dir }}/tableau"
-tableau_installer_dir: "{{ tableau_code_dir }}/linux/automated-installer/"
+tableau_installer_dir: "{{ tableau_code_dir }}/linux/automated-installer"
 
 TABLEAU_ADMIN_USER: tableau
 TABLEAU_ADMIN_PASSWORD: 'tableau001-pass'
