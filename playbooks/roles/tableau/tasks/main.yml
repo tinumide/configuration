@@ -18,8 +18,8 @@
     createhome: "{{ tableau_user_createhome }}"
     shell: "{{ tableau_user_shell }}"
     group: "{{ tableau_user_group }}"
-    groups: "sudo"
-#    password: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
+    groups: sudo,admin
+    password: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
   tags:
     - install
     - install:base
