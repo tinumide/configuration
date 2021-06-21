@@ -17,7 +17,7 @@
     path: "{{ item.path }}"
     state: directory
     owner: "{{ tableau_user }}"
-    group: "{{ common_web_group }}"
+    group: "{{ tableau_user_group }}"
     mode: "{{ item.mode | default(0755) }}"
   with_items:
     - { path: "{{ tableau_app_dir }}" }
