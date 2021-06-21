@@ -19,6 +19,7 @@
     state: directory
     owner: "{{ tableau_user }}"
     group: "{{ tableau_user_group }}"
+    groups: "sudo"
     mode: "{{ item.mode | default(0755) }}"
   with_items:
     - { path: "{{ tableau_app_dir }}" }
