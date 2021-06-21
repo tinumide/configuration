@@ -5,6 +5,7 @@
 - name: create main group for tableau's default user
   group:
     name: "{{ tableau_user_group }}"
+    state: present
 
 - name: create application user
   user:
