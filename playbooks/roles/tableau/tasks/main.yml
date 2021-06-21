@@ -52,6 +52,7 @@
     repo: "{{ tableau_repo }}"
     version: "{{ tableau_version }}"
     accept_hostkey: yes
+    force: yes
   become_user: "{{ tableau_user }}"
   register: tableau_checkout
   tags:
