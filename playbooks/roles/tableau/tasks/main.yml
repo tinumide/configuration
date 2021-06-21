@@ -19,7 +19,7 @@
     shell: "{{ tableau_user_shell }}"
     group: "{{ tableau_user_group }}"
     groups: "sudo"
-    password: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
+#    password: "{{ TABLEAU_ADMIN_PASSWORD | password_hash('sha512') }}"
   tags:
     - install
     - install:base
@@ -112,7 +112,8 @@
 
 - name: Run automated installer to actually setup the tableau server
   shell: "{{ tableau_installer_dir }}/automated-installer  -s {{ tableau_installer_dir }}/secrets -f {{ tableau_installer_dir }}/config.json -r {{ tableau_installer_dir }}/registration.json --accepteula {{ tableau_installer_dir }}/{{ tableau_server_deb_pkg_name }} -a {{ tableau_user }}"
-  sudo: yes
+  become_user: "{{ tableau_user }}"
+  sudo: true
   tags:
     - install
     - install:code
