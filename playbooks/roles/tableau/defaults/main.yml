@@ -51,3 +51,5 @@ tableau_registration_config:
   department: "Enterprise"
   first_name: "{{ TABLEAU_REGISTRATION_CONFIG_USER_FIRST_NAME }}"
   email:  "{{ TABLEAU_REGISTRATION_CONFIG_USER_EMAIL }}"
+
+TABLEAU_REGISTRATION_KEY: ""
